@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text converter</title>
+    <style>
+        body{
+            margin:0px;
+            background-color: #f4f4f4;
+        }
+        #box{
+            background-color:white;
+            width:450px;
+            height:300px;
+            margin:175px 550px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        #text{
+            padding-top:20px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        #box1{
+            width:350px;
+            height:120px;
+            border:1px solid #ddd;
+            font-size:larger;
+            padding-left:10px;
+            outline:none;
+            resize:none;
+            padding-top:10px;
+        }
+        button{
+            background-color: #007bff;
+            width:360px;
+            height:50px;
+            margin-top:20px;
+            text-align: center;
+            display:block;
+            color: white;
+            margin-left:45px;
+            border-width: none;
+            border-radius: 5px;
+            font-size: larger;
+            border:none;
+        }
+        button:hover{
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1 id="text">Text to Speech</h1>
+        <textarea placeholder="Enter text..." id="box1"></textarea>
+        <button onclick="TextSpeech()"id="btn">Speak</button>
+    </div>
+    <script>
+        var speech=new SpeechSynthesisUtterance();
+        function TextSpeech(){
+            var value=document.getElementById("box1").value;
+            if(value.trim()!==""){
+                speech.text=value;
+                speech.rate=1;
+                speech.volume=5;
+                speech.pitch=1;
+                window.speechSynthesis.speak(speech);
+
+            }
+            else{
+                alert("please enter some text!");
+            }
+        }
+    </script>
+</body>
+
+</html>
