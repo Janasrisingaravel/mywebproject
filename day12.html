@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            background-color: #B2BEB5;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #form1{
+            width:450px;
+            height:640px;
+            margin-left:510px;
+            margin-top:30px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        input{
+            width:350px;
+            height:40px;
+            margin-left:30px;
+            outline:none;
+            border:2px solid #ddd;
+            border-radius: 7px;
+
+        }
+        label{
+            display:block;
+            padding-left:30px;
+            padding-top:30px;
+            padding-bottom:10px;
+            font-size: large;
+        }
+        button{
+            background-color: #A0A0A0;
+            text-align: center;
+            color:azure;
+            display:block;
+            width:300px;
+            height:40px;
+            margin-top:25px;
+            margin-left:70px;
+            border-radius: 7px;
+            border:none;
+            font-size: larger;
+            outline:none;
+        }
+        button:hover{
+            background-color:#787878;
+        }
+        span{
+            display:block;
+            padding-left:30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="form1">
+        <form id="form2">
+            <label> First Name</label> 
+            <input type="text" placeholder="Ex. Janasri" id="in1">
+            <span id="blur1"></span>
+            <label>Second Name</label>
+            <input type="text" placeholder="Ex.Singaravel" id="in2">
+            <span id="blur2"></span>
+            <label>Email Address</label>
+            <input type="email" placeholder="Ex. ABC@gmail.com" id="in3">
+            <span id="blur3"></span>
+            <label>Password</label>
+            <input type="password" placeholder="Ex. ********" id="in4">
+            <span id="blur4"></span>
+            <label>Date of Birth</label>
+            <input type="date" id="in5">
+            <span id="blur5"></span>
+            <button id="btn" type="submit">Submit</button>
+    
+        </form>
+    </div>
+    <script>
+
+            document.getElementById("form2").addEventListener("submit",function (event) {
+                event.preventDefault();
+                let isvalid=true;
+                let inputs = document.querySelectorAll("#form2 input");
+                inputs.forEach(input =>{
+                    let inputvalue=input.value.trim();
+                    let messagespan=document.getElementById("blur"+input.id.slice(-1));
+                    if(inputvalue===""){
+                        messagespan.textContent="Field cannot be empty!"
+                        messagespan.style.color="red";
+                        isvalid=false;
+                    }
+                    else{
+                        messagespan.textContent="";
+                        localStorage.setItem(input.id, inputvalue);
+
+                    }
+                })
+                if(isvalid){
+                    alert("form submitted successfully!")
+                }
+
+            })
+
+   </script>
+</body>
+</html>

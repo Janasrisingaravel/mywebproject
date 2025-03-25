@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.4);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+
+
+        }
+        .class1{
+            background-color:white;
+            width:500px;
+            height:350px;
+            font-size:large;
+            margin:150px;
+            border-radius:10px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+
+        }
+        .class1 input{
+            width:300px;
+            height:30px;
+            border-radius:5px;
+        }
+        #y{
+            width:70px;
+            height:15px;
+        }
+        table td{
+            padding-bottom:20px;
+        }
+        button{
+            align-items:center;
+            justify-content:center;
+            background-color: black;
+            color:azure;
+            border-radius:5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="class1">
+        <h1>
+            Login Here
+        </h1>
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="id1">Name</label></td>
+                    <td><input type="text" id="id1"></td>
+                </tr>
+                <tr>
+                    <td><label>Number</label></td>
+                    <td><input type="Number"></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="email"></td>
+                </tr>
+                <tr>
+                    <td><label>Confirm</label></td>
+                    <td><input type="radio" name="a" id="y">Yes <input type="radio" name="a" id="y"> No</td>
+                </tr>
+                <tr><td><button>Submit</button></td></tr>
+            </table>
+        </form>
+    </div>
+    
+    
+</body>
+</html>
